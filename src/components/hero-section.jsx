@@ -1,6 +1,8 @@
 //Importación de imagen
 import Mug from "../assets/images/Mug1.png";
 
+import Contact from "./contact";
+
 const Hero = () => {
   return (
     <section className="hero-section">
@@ -21,6 +23,8 @@ const Hero = () => {
       <div className="hero-section-image">
         <img src={Mug} alt="Pink Mug" />
       </div>
+
+      <Contact />
     </section>
   );
 };

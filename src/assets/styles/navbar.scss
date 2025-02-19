@@ -129,7 +129,6 @@ nav {
   }
 }
 
-/* En pantallas pequeñas, oculta los enlaces y muestra el menú */
 @media (max-width: 1350px) {
   .links-wrapper {
     display: none;
@@ -155,7 +154,7 @@ nav {
     left: 50%;
     transform: translate(-50%, -50%);
     padding: 20px;
-    background: #fff;
+    background: white;
     border-radius: 8px;
   }
 }

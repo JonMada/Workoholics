@@ -1,0 +1,127 @@
+.contact-container {
+  width: 32px;
+  height: 300px;
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: $black;
+  font-size: 24px;
+  font-weight: $regular;
+  position: absolute;
+  cursor: pointer;
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+  right: -5%;
+  top: 98%;
+  transform: translateY(-98%);
+  transition: transform 0.3s ease;
+
+  span {
+    align-self: flex-start;
+    transition: letter-spacing 0.3s ease;
+
+    &:hover {
+      letter-spacing: 1px;
+    }
+
+    // Anular hover táctiles
+    @media (pointer: coarse) {
+      &:hover {
+        letter-spacing: normal;
+      }
+    }
+  }
+
+  .contact-line {
+    width: 2px;
+    height: 44px;
+    background-color: $pink;
+    margin-bottom: 13px;
+    margin-right: 1px;
+  }
+
+  //Media queries
+  @media (max-width: 1900px) {
+    display: flex;
+    width: 35px;
+    height: 180px;
+    right: -5%;
+    top: 95%;
+
+    .contact-line {
+      width: 2px;
+      height: 44px;
+      background-color: $pink;
+      margin-bottom: 13px;
+      margin-right: -1px;
+    }
+
+    span {
+      font-size: 22px;
+    }
+  }
+
+  @media (max-width: 1410px) {
+    display: flex;
+    width: 35px;
+    height: 180px;
+    right: -1%;
+    top: 84%;
+
+    .contact-line {
+      width: 2px;
+      height: 44px;
+      background-color: $pink;
+      margin-bottom: 13px;
+      margin-right: -1px;
+    }
+
+    span {
+      font-size: 22px;
+    }
+  }
+
+  @media (max-width: 1300px) {
+    display: flex;
+    width: 35px;
+    height: 180px;
+    font-size: 15px;
+    right: 1%;
+    top: 95%;
+
+    .contact-line {
+      width: 2px;
+      height: 44px;
+      background-color: $pink;
+      margin-bottom: 13px;
+      margin-right: -1px;
+    }
+
+    span {
+      font-size: 20px;
+    }
+  }
+
+  @media (max-width: 1000px) {
+    right: 1%;
+    top: 95%;
+  }
+
+  @media (max-width: 880px) {
+    right: 1%;
+    top: 100%;
+
+    .contact-line {
+      margin-right: -5px;
+    }
+
+    span {
+      font-size: 20px;
+    }
+  }
+
+  //El componente desaparece en dispositivos pequeños
+  @media (max-width: 750px) {
+    display: none;
+  }
+}
