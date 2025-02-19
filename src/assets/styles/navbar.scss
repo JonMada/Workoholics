@@ -1,0 +1,161 @@
+nav {
+  display: flex;
+  justify-content: center;
+  max-width: 1260px;
+  overflow: hidden;
+  margin: 0 auto;
+}
+
+.navbar-wrapper {
+  max-width: 1260px;
+  width: 100%;
+  height: 27px;
+  margin: 44px auto 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  .logo-wrapper {
+    a {
+      img {
+        width: 185px;
+        height: 23px;
+      }
+    }
+  }
+
+  @media (max-width: 1400px) {
+    .logo-wrapper {
+      margin-left: 16px;
+    }
+  }
+
+  .menu-icon {
+    cursor: pointer;
+    font-size: 45px;
+    font-weight: $regular;
+    margin-right: 25px;
+    color: $black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .links-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    width: 100%;
+    margin-right: 15px;
+
+    ul {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr) 1.5fr;
+      gap: 25px;
+      list-style: none;
+    }
+
+    li {
+      width: 100%;
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+    }
+
+    a {
+      position: relative;
+      overflow: hidden;
+      text-decoration: none;
+      font-size: 18px;
+      line-height: 23.76px;
+      font-weight: $regular;
+      color: $black;
+      transition: color 0.5s ease-in-out;
+    }
+
+    .cart-link {
+      width: 100%;
+
+      a {
+        font-weight: $bold;
+      }
+    }
+
+    /* Hovers para escritorio */
+    @media (hover: hover) {
+      a::before,
+      a::after {
+        content: "";
+        position: absolute;
+        width: 100%;
+        left: 0;
+      }
+
+      a::after {
+        content: attr(data-replace);
+        height: 100%;
+        top: 0;
+        transform-origin: 100% 50%;
+        transform: translate3d(200%, 0, 0);
+        transition: transform 0.3s cubic-bezier(0.76, 0, 0.24, 1);
+        color: $pink;
+      }
+
+      a:hover::before {
+        transform-origin: 0% 50%;
+        transform: scaleX(1);
+      }
+
+      a:hover::after {
+        transform: translate3d(0, 0, 0);
+      }
+
+      a span {
+        display: inline-block;
+        transition: transform 0.35s cubic-bezier(0.76, 0, 0.24, 1);
+      }
+
+      a:hover span {
+        transform: translate3d(-200%, 0, 0);
+      }
+    }
+
+    /* Active para dispositivos táctiles */
+    @media (hover: none) {
+      a:active {
+        color: $pink;
+      }
+    }
+  }
+}
+
+/* En pantallas pequeñas, oculta los enlaces y muestra el menú */
+@media (max-width: 1350px) {
+  .links-wrapper {
+    display: none;
+  }
+
+  .menu-icon {
+    display: block;
+  }
+
+  .menu-modal {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 1000;
+  }
+
+  .menu-modal .modal-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 20px;
+    background: #fff;
+    border-radius: 8px;
+  }
+}

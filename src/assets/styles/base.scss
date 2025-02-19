@@ -1,0 +1,23 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  background-color: $pink;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+body {
+  overflow-x: hidden;
+  font-family: $font, sans-serif;
+  max-width: 1440px;
+  margin: 0 auto;
+  background-color: #ffffff;
+  color: $black;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
