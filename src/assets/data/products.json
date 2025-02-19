@@ -1,0 +1,48 @@
+[
+  {
+    "id": 1,
+    "name": "T-shirt",
+    "description": "Etiam vulputate dui efficitur ultrices pharetra. Praesent tempor mollis purus.",
+    "colors": [
+      {
+        "name": "Pink",
+        "image": "assets/images/Tshirt1.png"
+      },
+      {
+        "name": "Black",
+        "image": "assets/images/Tshirt2.png"
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "name": "Bottle",
+    "description": "Etiam vulputate dui efficitur ultrices pharetra. Praesent tempor mollis purus.",
+    "colors": [
+      {
+        "name": "Pink",
+        "image": "assets/images/Bottle1.png"
+      },
+      {
+        "name": "Black",
+        "image": "assets/images/Bottle2.png"
+      }
+    ]
+  },
+
+  {
+    "id": 3,
+    "name": "Mug",
+    "description": "Etiam vulputate dui efficitur ultrices pharetra. Praesent tempor mollis purus.",
+    "colors": [
+      {
+        "name": "Pink",
+        "image": "assets/images/Mug1.png"
+      },
+      {
+        "name": "Black",
+        "image": "assets/images/Mug2.png"
+      }
+    ]
+  }
+]
