@@ -167,6 +167,50 @@
     }
   }
 
+  @media (max-width: 830px) {
+    .hero-section-text {
+      font-size: 15vw;
+      .lorem span {
+        margin-right: 20vw;
+      }
+      .ipsum {
+        margin-left: 8vw;
+      }
+      .dolor span {
+        margin-right: 12vw;
+      }
+    }
+
+    .hero-section-image {
+      top: 4.5vh;
+      right: 4.5vw;
+      width: 42vw;
+    }
+  }
+
+  @media (max-width: 600px) {
+    .hero-section-text {
+      font-size: 27vw;
+      line-height: 1.4;
+      .lorem span {
+        margin-left: 8vw;
+      }
+      .ipsum {
+        margin-right: 30vw;
+        margin-left: 0;
+      }
+      .dolor span {
+        margin-left: 8vw;
+      }
+    }
+
+    .hero-section-image {
+      top: 15vh;
+      right: 11vw;
+      width: 70vw;
+    }
+  }
+
   @media (max-width: 485px) {
     .hero-section-text {
       font-size: 27vw;
