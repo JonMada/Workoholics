@@ -10,7 +10,6 @@ const Footer = () => {
   });
 
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [successMessage, setSuccessMessage] = useState("");
 
   const handleChange = (e) => {
     const { name, value, type, checked } = e.target;
@@ -31,7 +30,6 @@ const Footer = () => {
 
     setTimeout(() => {
       setIsSubmitting(false);
-      setSuccessMessage("Your message has been sent!");
       setFormData({ email: "", termsAccepted: false });
     }, 2000);
   };
@@ -84,7 +82,6 @@ const Footer = () => {
 
         <div className="contact-form">
           <p>Contact us!</p>
-
           <form onSubmit={handleSubmit}>
             <div>
               <input
@@ -115,7 +112,7 @@ const Footer = () => {
                   </a>{" "}
                   and{" "}
                   <a href="#" target="_blank">
-                    Privacy Policy
+                    Privacy Policy.
                   </a>
                 </label>
               </div>
@@ -124,16 +121,12 @@ const Footer = () => {
                 <button type="submit" disabled={isSubmitting}>
                   {isSubmitting ? "Sending..." : "Submit"}
                 </button>
-                <HiArrowTurnDownRight />
+                <HiArrowTurnDownRight className="icon" />
               </div>
             </div>
           </form>
-
-          {successMessage && (
-            <p className="success-message">{successMessage}</p>
-          )}
         </div>
-        {/*  <div className="policies">
+        <div className="policies">
           <a href="#" target="_blank">
             Privacy Policy
           </a>
@@ -143,7 +136,7 @@ const Footer = () => {
           <a href="#" target="_blank">
             Cookies
           </a>
-        </div> */}
+        </div>
       </div>
     </footer>
   );

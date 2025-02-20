@@ -128,15 +128,16 @@
       border: none;
       text-decoration: none;
       font-family: $font;
-
-      &:hover {
-        background-color: $black;
-        color: white;
-      }
+      transition: all 0.5s ease;
     }
 
     .buy-icon {
       font-size: 33px;
+      transition: transform 0.5s ease;
+    }
+
+    button:hover + .buy-icon {
+      transform: translateX(8px);
     }
   }
 }
