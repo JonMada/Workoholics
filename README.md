@@ -59,16 +59,3 @@ Antes de comenzar, asegúrate de tener instaladas las siguientes herramientas en
      ```
 
      En esta página deberías poder ver el proyecto corriendo localmente.
-
-### ¿Qué hacer si el proyecto no se ejecuta correctamente?
-
-1. **Revisar la versión de Node.js**:
-   Si obtienes errores relacionados con la versión de Node.js, asegúrate de que estás utilizando una versión compatible con el proyecto.
-
-2. **Verificar dependencias**:
-   Si tienes problemas con las dependencias, puedes intentar eliminar la carpeta `node_modules` y ejecutar nuevamente `npm install` para reinstalar todas las dependencias:
-
-   ```bash
-   rm -rf node_modules
-   npm install
-   ```
