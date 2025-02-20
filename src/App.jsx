@@ -16,19 +16,24 @@ import Clothes from "./pages/clothes-page";
 import Others from "./pages/others-page";
 import Cart from "./pages/cart-page";
 
+//Importación contexto cart
+import { CartProvider } from "./components/cart-context";
+
 function App() {
   return (
-    <Router>
-      <Banner />
-      <NavBar />
-      <Routes>
-        <Route path="/" element={<LandingPage />} />
-        <Route path="/books" element={<Books />} />
-        <Route path="/clothes" element={<Clothes />} />
-        <Route path="/others" element={<Others />} />
-        <Route path="/cart" element={<Cart />} />
-      </Routes>
-    </Router>
+    <CartProvider>
+      <Router>
+        <Banner />
+        <NavBar />
+        <Routes>
+          <Route path="/" element={<LandingPage />} />
+          <Route path="/books" element={<Books />} />
+          <Route path="/clothes" element={<Clothes />} />
+          <Route path="/others" element={<Others />} />
+          <Route path="/cart" element={<Cart />} />
+        </Routes>
+      </Router>
+    </CartProvider>
   );
 }
 

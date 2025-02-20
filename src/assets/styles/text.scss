@@ -30,24 +30,6 @@
     margin-top: 125px;
   }
 
-  p {
-    font-size: 32px;
-    line-height: 1.4;
-    color: $black;
-
-    @media (max-width: 1200px) {
-      font-size: 30px;
-    }
-
-    @media (max-width: 820px) {
-      font-size: 29px;
-    }
-
-    @media (max-width: 480px) {
-      font-size: 24px;
-    }
-  }
-
   .text-heading {
     margin-bottom: 18px;
 
@@ -69,6 +51,33 @@
 
     .bold {
       font-weight: $bold;
+    }
+  }
+
+  .text-content {
+    margin-top: 18px;
+
+    @media (max-width: 1200px) {
+      margin-top: 12px;
+    }
+  }
+
+  .text-heading,
+  .text-content {
+    font-size: 32px;
+    line-height: 1.4;
+    color: $black;
+
+    @media (max-width: 1200px) {
+      font-size: 30px;
+    }
+
+    @media (max-width: 820px) {
+      font-size: 29px;
+    }
+
+    @media (max-width: 480px) {
+      font-size: 24px;
     }
   }
 }

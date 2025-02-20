@@ -1,9 +1,13 @@
 import { useState } from "react";
 import productsData from "../assets/data/products.json";
+import { HiArrowTurnDownRight } from "react-icons/hi2";
+import { useCart } from "./cart-context";
 
 const ProductList = () => {
+  const { cart, setCart } = useCart();
   const [selectedColorImages, setSelectedColorImages] = useState({});
   const [selectedColors, setSelectedColors] = useState({});
+  const [modalInfo, setModalInfo] = useState(null);
 
   const handleColorChange = (productId, colorName, image) => {
     setSelectedColorImages({
@@ -15,6 +19,31 @@ const ProductList = () => {
       ...selectedColors,
       [productId]: colorName,
     });
+  };
+
+  const handleAddToCart = (product) => {
+    setCart((prevCart) => {
+      const newQuantity = (prevCart[product.id] || 0) + 1;
+
+      setModalInfo({
+        name: product.name,
+        quantity: newQuantity,
+      });
+
+      return {
+        ...prevCart,
+        [product.id]: newQuantity,
+      };
+    });
+
+    setModalInfo({
+      name: product.name,
+      quantity: (cart[product.id] || 0) + 1,
+    });
+
+    setTimeout(() => {
+      setModalInfo(null);
+    }, 4000);
   };
 
   return (
@@ -58,11 +87,25 @@ const ProductList = () => {
                 alt={product.name}
               />
             </div>
-
-            <button className="buy-button">Buy</button>
+            <div className="buy-button-wrapper">
+              <button
+                className="buy-button"
+                onClick={() => handleAddToCart(product)}
+              >
+                Buy
+              </button>
+              <HiArrowTurnDownRight className="buy-icon" />
+            </div>
           </div>
         );
       })}
+
+      {/*Confirmación de compra */}
+      {modalInfo && (
+        <div className="cart-modal">
+          <p>{modalInfo.name} added to cart</p>
+        </div>
+      )}
     </section>
   );
 };

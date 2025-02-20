@@ -1,12 +1,19 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import { useCart } from "./cart-context";
 import { TbMenu } from "react-icons/tb";
 import { GrClose } from "react-icons/gr";
 import Logo from "../assets/images/logo.png";
 
 const NavBar = () => {
+  const { cart } = useCart();
   const [isMobile, setIsMobile] = useState(window.innerWidth < 750);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const totalItems = Object.values(cart).reduce(
+    (acc, quantity) => acc + quantity,
+    0
+  );
 
   useEffect(() => {
     const handleResize = () => {
@@ -54,8 +61,8 @@ const NavBar = () => {
             </li>
             <div className="cart-link">
               <li>
-                <Link to="/cart" data-replace="Cart ( )">
-                  <span>Cart ( )</span>
+                <Link to="/cart" data-replace={`Cart (${totalItems})`}>
+                  <span>Cart ({totalItems})</span>
                 </Link>
               </li>
             </div>
@@ -87,7 +94,7 @@ const NavBar = () => {
               </li>
               <li>
                 <Link to="/cart" onClick={() => setIsMenuOpen(false)}>
-                  Cart ( )
+                  Cart ({totalItems})
                 </Link>
               </li>
             </ul>
