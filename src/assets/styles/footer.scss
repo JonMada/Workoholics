@@ -1,0 +1,198 @@
+.footer-wrapper {
+  max-width: 1440px;
+  margin: 250px auto 0;
+  height: auto;
+  padding: 95px;
+  padding-bottom: 45px;
+  background-color: $black;
+  color: white;
+  display: grid;
+  grid-template-columns: 1.5fr 2fr;
+  gap: 10px;
+  font-family: $font;
+  font-weight: $regular;
+
+  .left-column {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+
+    .contact-methods {
+      display: flex;
+      flex-direction: column-reverse;
+      gap: 5px;
+      margin-bottom: 55px;
+
+      a {
+        text-decoration: none;
+        color: white;
+        font-size: 24px;
+        transition: color 0.3 ease;
+
+        &:hover {
+          color: $pink;
+        }
+      }
+    }
+
+    .rrss {
+      p {
+        display: flex;
+        align-items: center;
+      }
+      a {
+        text-decoration: none;
+        color: white;
+        font-size: 24px;
+        transition: color 0.3 ease;
+
+        &:hover {
+          color: $pink;
+        }
+      }
+
+      .insta-icon {
+        font-size: 40px;
+      }
+    }
+
+    .motto {
+      width: 100%;
+      margin-top: 345px;
+      padding-left: 8px;
+      display: flex;
+      align-items: flex-end;
+      gap: 10px;
+      font-size: 17px;
+
+      svg {
+        width: 20px;
+        height: auto;
+      }
+    }
+  }
+}
+
+.footer-wrapper {
+  .right-column {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    .headings {
+      display: flex;
+      flex-direction: column;
+      margin-top: -5px;
+
+      p {
+        font-size: 35px;
+        font-weight: $bold;
+      }
+    }
+
+    .contact-form {
+      width: 100%;
+      margin-top: 8px;
+      p {
+        font-size: 35px;
+        font-weight: $bold;
+        color: $pink;
+      }
+
+      form {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        margin-top: 40px;
+
+        input[type="email"] {
+          width: 100%;
+          font-size: 16px;
+          border: none;
+          background-color: transparent;
+          color: white;
+          border-bottom: solid 1px white;
+          font-family: $font;
+          font-weight: $regular;
+          font-size: 20px;
+          padding-bottom: 16px;
+
+          &:focus {
+            border-color: $pink;
+            outline: none;
+          }
+
+          &::placeholder {
+            color: #aaa;
+            font-family: $font;
+            font-size: 20px;
+          }
+        }
+
+        .terms-btn {
+          display: flex;
+          justify-content: space-between;
+          margin-top: 15px;
+          position: relative;
+
+          .terms {
+            display: flex;
+            justify-content: flex-start;
+            align-items: flex-start;
+            gap: 20px;
+
+            input[type="checkbox"] {
+              display: none;
+            }
+
+            .checkbox {
+              position: absolute;
+              left: 0;
+              top: 0;
+              width: 15px;
+              height: 15px;
+              box-shadow: 0px 0px 0px 0.5px white;
+              background-color: transparent;
+              transition: background-color 0.2s, border-color 0.2s;
+            }
+
+            input[type="checkbox"]:checked + .checkbox {
+              background-color: $pink;
+            }
+
+            input[type="checkbox"]:checked + .checkbox::before {
+              content: "";
+              position: absolute;
+              left: 5px;
+              top: 3px;
+              width: 3px;
+              height: 6px;
+              border: solid white;
+              border-width: 0 2px 2px 0;
+              transform: rotate(45deg);
+            }
+
+            label {
+              width: 65%;
+              line-height: 26px;
+              font-size: 15px;
+              font-weight: $regular;
+              position: relative;
+              z-index: 0;
+              padding-left: 40px;
+
+              a {
+                text-decoration: none;
+                color: white;
+                border-bottom: 1px solid white;
+                font-weight: $regular;
+                font-size: 15px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
