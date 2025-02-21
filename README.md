@@ -1,6 +1,6 @@
 # Workoholics | Prueba Técnica
 
-Este proyecto está desarrollado utilizando **Vite** y **React.js**. El objetivo de esta prueba es crear una plataforma que responda a los requisitos establecidos por el cliente y que sea completamente funcional en un entorno de desarrollo local.
+Este proyecto está desarrollado utilizando **Vite** y **React.js**. 
 
 ## Instrucciones para correr el proyecto en local
 
